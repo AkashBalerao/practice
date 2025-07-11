@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="
+           http://www.springframework.org/schema/beans 
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/context 
+           http://www.springframework.org/schema/context/spring-context.xsd
+           http://www.springframework.org/schema/util 
+           http://www.springframework.org/schema/util/spring-util.xsd">
+           
+          <context:annotation-config></context:annotation-config>
+           
+        <util:list list-class="java.util.LinkedList" id="names">
+        	<value>Ram</value>
+        	<value>Rohith</value>
+        	<value>Mani</value>
+        	<value>Abhi</value>
+        </util:list>
+        
+        <util:map map-class="java.util.HashMap" id="courses">
+        	<entry key="Java" value="8000"/>
+        	<entry key="Spring" value="6000"/>
+        	<entry key="DJango" value="7000"/>
+        	<entry key="SpringBoot" value="9000"/>
+        </util:map>
+        
+        <util:properties id="db">
+        	<prop key="driver">com.sql.driver</prop>
+        	<prop key="username">akashBalerao</prop>
+        	<prop key="password">akash@123</prop>
+        	<prop key="url">msql:jdbc://localhost:3308/mydb</prop>
+        </util:properties>
+           
+       <bean class="StandAloneCollections.StudentDB" id="studentdb1">
+       	<property name="names" ref="names"></property>
+       	<property name="courses" ref="courses"></property>
+       	<property name="dpproperties" ref="db"></property>
+       </bean>
+       
+       <bean class="java.lang.Integer" id="intbean">
+       <constructor-arg><value>24</value></constructor-arg>
+       </bean>
+</beans>

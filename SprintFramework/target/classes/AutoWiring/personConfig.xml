@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:p="http://www.springframework.org/schema/c"
+       xsi:schemaLocation="
+           http://www.springframework.org/schema/beans 
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/context 
+           http://www.springframework.org/schema/context/spring-context.xsd">
+        <context:annotation-config/>
+           
+       <bean class="AutoWiring.Address" name="address1">
+       	<property name="city"><value>Karimnagar</value></property>
+       	<property name="state"><value>Telangana</value></property>
+       </bean>
+       
+       <bean class="AutoWiring.Aadhaar" name="aadhaar1" primary="true">
+       	<property name="number"><value>748304111755</value></property>
+       </bean>
+       
+       <bean class="AutoWiring.Aadhaar" name="aadhaar2">
+      
+       	<property name="number"><value>748304111756</value></property>
+       </bean>
+       <bean class="AutoWiring.Person" name="person1" />
+           
+</beans>
